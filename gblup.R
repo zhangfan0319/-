@@ -16,7 +16,7 @@ attr(Ginv,"INVERSE")<-TRUE
 ##表型数据正态化
 source("/storage-01/poultrylab1/zhangfan/Genome/rntransform.R")
 source("/storage-01/poultrylab1/zhangfan/Genome/ztransform.R")
-ntra <- rntransform(datag$bw42_g,datag,family=gaussian)
+ntra <- rntransform(datag$trait,datag,family=gaussian)
 
 ####构建模型(固定效应里不能有缺失)
 modelGBLUP <- asreml(fixed=ntra ~ 1 + Year + Batch + Sex,
